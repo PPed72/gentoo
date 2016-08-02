@@ -43,7 +43,6 @@ RDEPEND=">=dev-libs/glib-2.30.2:2
 	aalib? ( media-libs/aalib )
 	alsa? ( media-libs/alsa-lib )
 	aqua? ( x11-libs/gtk-mac-integration )
-	dev-util/gdbus-codegen
 	gnome? ( gnome-base/gvfs )
 	webkit? ( >=net-libs/webkit-gtk-1.6.1:2 )
 	virtual/jpeg:0
@@ -125,12 +124,19 @@ src_prepare() {
 	gnome2_src_prepare
 }
 
+src_configure() {
+	gnome2_src_configure \
+			GDBUS_CODEGEN=/bin/false
+}
+
 src_compile() {
 	addwrite /dev/nvidiactl  # bug #569738
 	addwrite /dev/nvidia0  # bug #569738
 	addwrite /dev/dri/  # bug #574038
+	addwrite /dev/ati/  # bug 589198
 	addwrite /proc/mtrr  # bug 589198
 
+	export XDG_DATA_DIRS=/usr/share  # bug 587004
 	gnome2_src_compile
 }
 

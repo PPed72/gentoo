@@ -9,7 +9,7 @@ inherit autotools linux-mod multilib toolchain-funcs versionator
 MY_PV=$(delete_version_separator '_')
 MY_PN="${PN/-kernel}"
 MY_P="${MY_PN}-${MY_PV}"
-PVER="20160713"
+PVER="20160801-2"
 
 DESCRIPTION="The OpenAFS distributed file system kernel module"
 HOMEPAGE="https://www.openafs.org/"
@@ -114,11 +114,17 @@ pkg_postinst() {
 	use kernel_FreeBSD && /usr/sbin/kldxref "${EPREFIX}/boot/modules"
 	use kernel_linux && linux-mod_pkg_postinst
 
-	if use kernel_linux && ! version_is_at_least 1.6.18.2 ${REPLACING_VERSIONS}; then
-		ewarn "As of OpenAFS 1.6.18.2, Gentoo's packaging no longer requires"
-		ewarn "that CONFIG_DEBUG_RODATA be turned off in one's kernel config."
-		ewarn "If you only turned this option off for OpenAFS, please re-enable"
-		ewarn "it, as keeping it turned off is a security risk."
+	if use kernel_linux; then
+		local v
+		for v in ${REPLACING_VERSIONS}; do
+			if ! version_is_at_least 1.6.18.2 ${v}; then
+				ewarn "As of OpenAFS 1.6.18.2, Gentoo's packaging no longer requires"
+				ewarn "that CONFIG_DEBUG_RODATA be turned off in one's kernel config."
+				ewarn "If you only turned this option off for OpenAFS, please re-enable"
+				ewarn "it, as keeping it turned off is a security risk."
+				break
+			fi
+		done
 	fi
 }
 

@@ -44,7 +44,7 @@ else
 	case ${PV} in
 		*9999*|*_rc*) ;;
 		*)
-			KEYWORDS="-* amd64 ~arm ~arm64 ~ppc64 ~x86 ~amd64-fbsd ~x86-fbsd ~x64-macos ~x64-solaris"
+			KEYWORDS="-* amd64 arm ~arm64 ~ppc64 x86 ~amd64-fbsd ~x86-fbsd ~x64-macos ~x64-solaris"
 			;;
 	esac
 fi
@@ -242,11 +242,6 @@ pkg_postinst()
 	find "${EROOT}"usr/lib/go -type f \
 		-exec touch -r "${EROOT}"${tref} {} \;
 	eend $?
-
-	if [[ ${PV} != 9999 && -n ${REPLACING_VERSIONS} &&
-		${REPLACING_VERSIONS} != ${PV} ]]; then
-		elog "Release notes are located at http://golang.org/doc/go${PV}"
-	fi
 
 	if $had_support_files; then
 		ewarn

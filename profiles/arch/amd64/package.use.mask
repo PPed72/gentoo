@@ -18,6 +18,10 @@
 
 #--- END OF EXAMPLES ---
 
+# James Le Cuirot <chewi@gentoo.org> (26 Jul 2016)
+# Only available on amd64.
+dev-java/icedtea -shenandoah
+
 # Mike Gilbert <floppym@gentoo.org> (23 Jun 2016)
 # This flag only has meaning on amd64
 sys-boot/grub:2 -grub_platforms_xen-32
@@ -74,7 +78,7 @@ media-libs/mesa -openmax
 
 # Samuli Suominen <ssuominen@gentoo.org> (16 Feb 2014)
 # Still considered experimental by upstream:
-# http://sourceforge.net/p/mikmod/bugs/16/#17ea
+# https://sourceforge.net/p/mikmod/bugs/16/#17ea
 media-libs/libmikmod sse2
 media-libs/libmikmod cpu_flags_x86_sse2
 

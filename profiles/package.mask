@@ -30,6 +30,63 @@
 
 #--- END OF EXAMPLES ---
 
+# Michał Górny <mgorny@gentoo.org> (1 Aug 2016)
+# Masked for testing, handling keywords and  collecting more changes
+# before unleashing the huge rebuild on all users. Has gotten musl
+# support and switches to control the default rtlib and C++ library.
+=sys-devel/llvm-3.8.1-r1
+
+# Johannes Huber <johu@gentoo.org> (1 Aug 2016)
+# Masked for removal in 30 days. Dead by upstream. Last release
+# with 15.08. Exported to kde-sunset overlay.
+kde-apps/kdeartwork-colorschemes
+kde-apps/kdeartwork-desktopthemes
+kde-apps/kdeartwork-emoticons
+kde-apps/kdeartwork-iconthemes
+kde-apps/kdeartwork-kscreensaver
+kde-apps/kdeartwork-meta
+kde-apps/kdeartwork-styles
+kde-apps/kdeartwork-wallpapers
+kde-apps/kdeartwork-weatherwallpapers
+kde-apps/kde-base-artwork
+
+# Pawel Hajdan jr <phajdan.jr@gentoo.org> (01 Aug 2016)
+# Dev channel releases are only for people who are developers or want more
+# experimental features and accept a more unstable release.
+>=www-client/chromium-54
+
+# Patrice Clement <monsieurp@gentoo.org> (31 Jul 2016)
+# Upstream is dead and the ebuild is a complete mess. Does not compile with
+# recent JVMs. Masked for removal in 30 days. See bug #584562.
+dev-java/oscache
+
+# Pacho Ramos <pacho@gentoo.org> (31 Jul 2016)
+# Upstream looks completely dead for a long time, doesn't reply to any bug
+# we report to them. This relies on obsolete software like (#587448) and
+# other bugs are being accumulated without any fix/attention. Removal in a
+# month if nobody comes with the fixes.
+www-client/midori
+
+# Pacho Ramos <pacho@gentoo.org> (31 Jul 2016)
+# Non working ebuild, bug #588394
+=media-video/pitivi-0.96
+
+# Johannes Huber <johu@gentoo.org> (29 Jul 2016)
+# Masked for removal in 30 days. Dead by upstream, superseded by
+# kde-plasma/plasma-workspace-wallpapers. Last release with
+# 15.08.3. Exported to kde-sunset overlay.
+kde-apps/kde-wallpapers
+
+# Bernard Cafarelli <voyageur@gentoo.org> (26 Jul 2016)
+# Upstream closed service. Switch to another IPv6 tunnel broker
+# Masked for removal in 30 days, bug #589760
+net-misc/gogoc
+
+# Johannes Huber <johu@gentoo.org> (25 Jul 2016)
+# Upstream temp workaround. No reverse dependencies.
+# Removal in 30 days.
+kde-plasma/kactivities-workspace
+
 # Hans de Graaff <graaff@gentoo.org> (22 Jul 2016)
 # ruby20-only packages with no reverse dependencies, bug 576034
 # Masked for removal in 30 days.
@@ -76,7 +133,7 @@ kde-apps/kdepim-icons
 # Masked for removal in 30 days.
 kde-apps/ksnapshot
 
-# Michael Palimaka <kensington@gentoo.org) (13 Jul 2016)
+# Michael Palimaka <kensington@gentoo.org> (13 Jul 2016)
 # No longer supported or released upstream. No revdeps.
 # Masked for removal in 30 days. Bug 585386.
 dev-qt/qtquick1
@@ -95,12 +152,12 @@ dev-perl/cache-mmap
 # Vulnerable due to wrong suid binary permissions (#345337)
 <app-cdr/xcdroast-0.98_alpha16-r2
 
-# Michael Palimaka <kensington@gentoo.org) (7 Jul 2016)
+# Michael Palimaka <kensington@gentoo.org> (7 Jul 2016)
 # Requires obsolete kde-apps/kate:4. No further upstream development.
 # Masked for removal in 30 days.
 kde-misc/katelatexplugin
 
-# Michael Palimaka <kensington@gentoo.org) (7 Jul 2016)
+# Michael Palimaka <kensington@gentoo.org> (7 Jul 2016)
 # Requires obsolete kde-apps/kmix:4. No further upstream development.
 # Masked for removal in 30 days.
 kde-misc/kosd
@@ -190,17 +247,6 @@ www-apps/egroupware
 net-dns/namecoind
 net-dns/namecoin-qt
 
-# Michael Palimaka <kensington@gentoo.org> (29 Jun 2016)
-# No longer released upstream. Use kde-apps/ffmpegthumbs instead.
-# Masked for removal in 30 days.
-kde-apps/mplayerthumbs
-
-# Johannes Huber <johu@gentoo.org> (28 Jun 2016)
-# Masked for removal in 30 days. Dead upstream. Was only
-# useful with Nepomuk, superseded by Baloo long time ago.
-# No reverse dependencies, bug #583716.
-app-misc/strigi
-
 # Michał Górny <mgorny@gentoo.org> (27 Jun 2016)
 # (on behalf of QA & proxy-maint)
 # Major QA violations, bug #587342 (#585722 in particular).
@@ -236,98 +282,10 @@ app-portage/pms-test-suite
 # Unpatched security vulnerability per bug #475120
 media-video/motion
 
-# Michał Górny <mgorny@gentoo.org> (25 Jun 2016)
-# Obsolete packages for removal in 30 days. Replacements and bugs:
-# dev-ml/comparelib -> dev-ml/ppx_compare, #586904
-# dev-ml/deriving-ocsigen -> dev-ml/deriving, #586906
-# dev-ml/faillib -> dev-ml/ppx_fail, #586912
-# dev-ml/typehashlib -- not used anymore, #586928
-dev-ml/comparelib
-dev-ml/deriving-ocsigen
-dev-ml/faillib
-dev-ml/typehashlib
-
-# Michał Górny <mgorny@gentoo.org> (23 Jun 2016)
-# Integrated in media-video/bashnapi. Removal in 30 days.
-media-video/subotage
-
-# Pawel Hajdan jr <phajdan.jr@gentoo.org> (13 Jun 2016)
-# Dev channel releases are only for people who are developers or want more
-# experimental features and accept a more unstable release.
->=www-client/chromium-53
-
-# Pacho Ramos <pacho@gentoo.org> (12 Jun 2016)
-# Buggy, upstream dead for ages (#148741). Removal in a month.
-app-cdr/dvd95
-
 # Pacho Ramos <pacho@gentoo.org> (12 Jun 2016)
 # Unmaintained, development stalled for a long time (#168283).
 # Removal in a month.
 app-portage/epm
-
-# Pacho Ramos <pacho@gentoo.org> (12 Jun 2016)
-# Unmaintained, buggy and not needed by anything in the tree (#221667).
-# Removal in a month.
-dev-libs/vdk
-
-# Pacho Ramos <pacho@gentoo.org> (12 Jun 2016)
-# No buildable version in the tree and nobody is taking care
-# of it (#349457). Removal in a month.
-media-tv/dvbstreamer
-
-# Pacho Ramos <pacho@gentoo.org> (12 Jun 2016)
-# Multiple bugs, upstream died for ages (#360631). Removal in a month.
-net-p2p/microdc2
-
-# Pacho Ramos <pacho@gentoo.org> (12 Jun 2016)
-# Upstream stopped taking care and suggests kodi as an alternative.
-# (#363513). Removal in a month.
-media-tv/freevo
-
-# Pacho Ramos <pacho@gentoo.org> (12 Jun 2016)
-# Obsolete mod, also buggy (#382055). Removal in a month.
-www-apache/mod-auth-mysql
-
-# Pacho Ramos <pacho@gentoo.org> (12 Jun 2016)
-#   Patrick Lauer <patrick@gentoo.org> (21 May 2013)
-#   broken dependencies -> uninstallable #470712
-# Removal in a month (#429998)
-app-portage/g-ctan
-
-# Pacho Ramos <pacho@gentoo.org> (12 Jun 2016)
-# Fails to build, nothing requires it in the tree (#432718)
-# Removal in a month.
-media-video/avinfo
-
-# Pacho Ramos <pacho@gentoo.org> (12 Jun 2016)
-# Needs to be ported to new eclasses, obsoleted by hydrogen
-# Removal in a month (#442614)
-media-sound/trommler
-
-# Patrice Clement <monsieurp@gentoo.org> (5 Jun 2016)
-# Unmaintained ebuilds. Upstream is either dead or AWOL. Also, most of these
-# ebuilds are still sitting in ~arch after years in the tree.
-# Masked for removal in 30 days.
-dev-util/ccmalloc
-dev-util/cdecl
-dev-util/redet
-dev-util/eggy
-dev-util/mock
-dev-util/par
-dev-util/injectso
-dev-util/ghh
-dev-util/rec
-dev-util/jif
-dev-util/httpup
-dev-util/crow-designer
-dev-util/qdevelop
-dev-util/intel2gas
-dev-util/webcpp
-dev-util/as11
-dev-util/filepp
-dev-util/kdoc
-dev-util/skelgen
-dev-util/ftncheck
 
 # Michael Palimaka <kensington@gentoo.org> (26 May 2016)
 # Depends on vulnerable slot of net-libs/webkit-gtk.
@@ -357,12 +315,7 @@ www-client/luakit
 # Bug #483888
 <=dev-perl/Archive-Rar-2.20.0-r1
 
-# Lars Wendler <polynomial-c@gentoo.org> (19 May 2016)
-# Masked until all reverse dependencies have been fixed.
-# See tracker bug https://bugs.gentoo.org/583478
->=app-text/hunspell-1.4.0
-
-# Alon Bar-Lev <alonbl@gentoo.org) (13 May 2016)
+# Alon Bar-Lev <alonbl@gentoo.org> (13 May 2016)
 # Force gnutls-3.4 testing so we can stabilize it.
 >=net-libs/gnutls-3.5.0
 
@@ -504,11 +457,7 @@ dev-perl/ExtUtils-Constant
 net-im/silc-server
 
 # NP-Hardass <NP-Hardass@gentoo.org> (05 Feb 2016)
-# Security issues bug #536334. Remove this entry in a month.
-<net-nds/389-ds-base-1.3.2.22
-
-# NP-Hardass <NP-Hardass@gentoo.org> (05 Feb 2016)
-# Security issues bug #536334. Under investigation by maintainer.
+# Security issues. Under investigation by maintainer.
 app-admin/389-ds-console
 net-nds/389-admin
 app-admin/389-admin-console
@@ -616,12 +565,6 @@ dev-python/south
 # disabling GLX indirect rendering protocol support on the X server.
 <x11-drivers/nvidia-drivers-304
 
-# Patrick Lauer <patrick@gentoo.org> (24 Nov 2014)
-# Missing deps, uninstallable
-# Michał Górny <mgorny@gentoo.org> (26 Jun 2016)
-# Removal in 14 days, #528198.
-www-apps/trac-downloads
-
 # Michał Górny <mgorny@gentoo.org> (15 Sep 2014)
 # Causes undefined references few layers down (in mediastreamer),
 # someone needs to investigate.
@@ -715,13 +658,6 @@ www-plugins/chrome-binary-plugins:unstable
 # Seems to break all deps - API change?
 >=sci-libs/metis-5
 
-# Diego Elio Pettenò <flameeyes@gentoo.org> (13 Oct 2013)
-# Requires a NPN support in mod_ssl (www-server/apache) to work.
-# See #471512 for more details.
-# Michał Górny <mgorny@gentoo.org> (27 Jun 2016)
-# Replaced by mod_h2 (in Apache). Removal in 14 days, #587146.
-www-apache/mod_spdy
-
 # Sergey Popov <pinkbyte@gentoo.org> (18 Sep 2013)
 # Mask development releases of botan:
 # - causes many API breakages
@@ -773,16 +709,6 @@ app-text/cuneiform
 =dev-libs/yaz-4*
 >=dev-perl/Net-Z3950-ZOOM-1.300.0
 
-# Johannes Huber <johu@gentoo.org> (30 Jun 2016)
-# Andreas K. Huettel <dilfridge@gentoo.org> (22 Mar 2012)
-# Masked for removal in 30 days. Dead upstream. Superseded
-# by oxygen-gtk long time ago.
-#
-# (Original mask: Even its author admits that it's an ugly
-# hack. Crashes e.g. firefox with kde-4.8. Unmask at your own
-# risk.)
-kde-misc/kgtk
-
 # Samuli Suominen <ssuominen@gentoo.org> (06 Mar 2012)
 # Masked for testing since this is known to break nearly
 # every reverse dependency wrt bug 407091
@@ -791,15 +717,6 @@ kde-misc/kgtk
 # Samuli Suominen <ssuominen@gentoo.org> (30 Oct 2011)
 # Masked for security bug #294253, use only at your own risk!
 =media-libs/fmod-3*
-
-# Marijn Schouten <hkBst@gentoo.org> (07 April 2011)
-# Masked for number of issues, but can be used to
-# test against if people are impatient ;P
-# Known issues:
-# - Broken emacs support (ulm has promised to look)
-# - doesn't build when boehm-gc is built without threads
-# - no SLOTting yet!
-=dev-scheme/guile-2.0.0
 
 # Mike Frysinger <vapier@gentoo.org> (07 Mar 2010)
 # Very old packages that people should have upgraded away from

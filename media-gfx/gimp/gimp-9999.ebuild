@@ -41,12 +41,11 @@ RDEPEND=">=dev-libs/glib-2.40.0:2
 	dev-libs/libxslt
 	x11-themes/hicolor-icon-theme
 	>=media-libs/babl-0.1.14
-	>=media-libs/gegl-0.3.4:0.3[cairo,png]
+	>=media-libs/gegl-0.3.4:0.3[cairo]
 	>=dev-libs/glib-2.43
 	aalib? ( media-libs/aalib )
 	alsa? ( media-libs/alsa-lib )
 	aqua? ( x11-libs/gtk-mac-integration )
-	dev-util/gdbus-codegen
 	gnome? ( gnome-base/gvfs )
 	webkit? ( >=net-libs/webkit-gtk-1.6.1:2 )
 	virtual/jpeg:0
@@ -70,6 +69,7 @@ RDEPEND=">=dev-libs/glib-2.40.0:2
 	postscript? ( app-text/ghostscript-gpl )
 	udev? ( virtual/libgudev:= )"
 DEPEND="${RDEPEND}
+	dev-util/gdbus-codegen
 	sys-apps/findutils
 	virtual/pkgconfig
 	>=dev-util/intltool-0.40.1
@@ -140,8 +140,10 @@ src_compile() {
 	addwrite /dev/nvidiactl  # bug #569738
 	addwrite /dev/nvidia0  # bug #569738
 	addwrite /dev/dri/  # bug #574038
+	addwrite /dev/ati/  # bug 589198
 	addwrite /proc/mtrr  # bug 589198
 
+	export XDG_DATA_DIRS=/usr/share  # bug 587004
 	gnome2_src_compile
 }
 
